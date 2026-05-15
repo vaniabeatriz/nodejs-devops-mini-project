@@ -12,10 +12,21 @@ variable "instance_type" {
   default = "t2.micro"
 }
 
+variable "key_name" {
+  type = string
+}
+
 variable "subnet_id" {
   type = string
 }
 
-variable "security_group_ids" {
-  type = list(string)
+variable "vpc_id" {
+  type = string
 }
+
+variable "control_plane_cidr" {
+  type        = string
+  description = "CIDR block for SSH access from the control plane."
+  default     = "0.0.0.0/0"
+}
+
