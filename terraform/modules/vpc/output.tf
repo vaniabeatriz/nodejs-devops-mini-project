@@ -1,16 +1,13 @@
 output "vpc_id" {
-  value       = aws_vpc.core.id
-  description = "ID of devops-mini-project VPC."
+  value = aws_vpc.core.id
 }
 
 output "public_subnet_1_id" {
-  value       = aws_subnet.public_1.id
-  description = "ID of the 1st public subnet."
+  value = aws_subnet.public_1.id
 }
 
 output "public_subnet_2_id" {
-  value       = aws_subnet.public_2.id
-  description = "ID of the 2nd public subnet."
+  value = aws_subnet.public_2.id
 }
 
 output "public_subnet_ids" {
@@ -18,6 +15,4 @@ output "public_subnet_ids" {
     aws_subnet.public_1.id,
     aws_subnet.public_2.id
   ]
-
-  description = "List of public subnet IDs."
 }
