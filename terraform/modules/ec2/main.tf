@@ -50,4 +50,23 @@ resource "aws_instance" "ci_server" {
     Name = "CI-Server"
   }
 }
+
+
+ user_data = <<-EOF
+              #!/bin/bash
+              set -e
+              apt-get update -y
+        # Install packages
+              apt-get install -y \
+                openjdk-17-jdk \
+                apache2 \
+                mysql-server \
+                unzip \
+                wget \
+                curl \
+                gnupg \
+                ca-certificates \
+                software-properties-common \
+                apt-transport-https
+        
 }
